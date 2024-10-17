@@ -5,6 +5,9 @@ const shareSection = document.querySelector('.hide');
   function applyButtonAction(){
     const screenWidth = window.innerWidth;
     shareBtnElem.forEach(function(btn){
+
+      btn.removeEventListener('click',shareLinkSmallScreen);
+      btn.removeEventListener('click',shareLinkLargeScreen);
       if(screenWidth < 900){
         btn.addEventListener('click',shareLinkSmallScreen);
       }
